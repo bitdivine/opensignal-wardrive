@@ -1,1 +1,27 @@
-My Page
+<html>
+<head>
+<title>OpenSignal Wardrive</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="osmap/v3.6.0-dist/ol.js"></script>
+<script type="text/javascript" src="world.js"></script>
+<link rel="stylesheet" type="text/css" href="osmap/live/ol.css"/>
+<link rel="stylesheet" type="text/css" href="world.css"/>
+</head>
+<body>
+<div id="map" class="smallmap"></div>
+<h2>OpenSignal Wardrive HOWTO</h2>
+<ul>
+	<li>Install the <a href="http://opensignal.com/">OpenSignal</a> app for Droid.  (The iThingy is too locked down.  Someone needs to tell the folks at Cupertino to chill out a bit.  Giving folks access to their own data isn't actually going to hurt their business model.)</li>
+	<li>Install a camera app that stores location, bearing and azimuth.  I use <a href="https://play.google.com/store/apps/details?id=net.sourceforge.opencamera&hl=en">OpenCamera</a> for Droid.</li>
+	<li>Get a spare battery or external battery pack.  If you ramp up data collection to max it will drain your battery in a few hours.  Dialoga was nice enough to give us an external pack at the Mobile World Congress.  Thanks!</li>
+	<li>I personally prefer going on wardrives with two people, one phone each.  One of us watches the OpenSignal radar scanner, the other looks out for mobile masts and photographs them.  Your milage may vary and your buddy's running legs might not keep up.</li>
+	<li>Before heading out, go into the OpenSignal app settings and increase the sensor collection rate to high and check the box for saving data to your SD card.  Check that you can get those files before you head out, otherwise you'll be awfully disappointed when you get back.  I've seen quite a few dudes look like gumps when the time comes to settle down in a coffee shop and exchange data.</li>
+	<li>Run, rabbit run!  When going on a wardrive it's a good idea to circle an area and then criss-cross it so that you've mapped the boundary and some of the interior.  If you are in the countryside, mountain tops are fun because you will usually change mast as you go over the top and you can use this to identify the position of masts fairly accurately.  In the city things are a wee bit more complicated, with signals bouncing off buildings and doing all sorts of strange things.</li>
+	<li>When you get back, download your OpenSignal data into a folder on your laptop.  The data should include a whole lot of .csv files.</li>
+	<li>Load the files with the button below to see a map:<br /><input type="file" multiple id="csv_files"></li>
+	<li>Observation: On occasion the location, taken from GPS, is inaccurate, sometimes wildly so.  This will come as no surprise for those of you who have sailed through the narrow and frighteningly rocky Sound of Jura in the middle of a pitch black night with nought to guide you but a chart, a hurricane lamp and a GPS that is currently and very unhelpfully placing you in sunny Hawaii.  Oh yes, and a couple of light buoys but some unhelpful cottager has left a light on and a combination of mist and swaying trees make it awfully hard to distinguish a safe water sign from a cottage thirty yards inland.  It's good to see that wrecking is being maintained in all its traditional glory.  To fix this I need to eliminate outliers.  Last Sunday's wardrive put me in London one second and in Sub-Saharan Africa the next.  I will make the reasonable assumption that my legs cannot actually carry me faster than the speed of light and reject such transitions.</li>
+	<li>TODO: When I load more than a few thousand points into the map it gets rather sluggish.  I will probably have to implement some sort of clustering algorithm to reduce the number of markers rendered at any particular level of zoom.  There is a method affectionately known as the Atomic Bomb algorithm by people in the industry.  I'll try that.</li>
+	<li>TODO: Colour different CIDs differently and add hover text.  At the moment if you click, the ID of the mobile masts near your mouse are printed to the developer console but that's all.  Fancier stuff will have to wait for next weekend.</li>
+</ul>
+</body>
+</html>
