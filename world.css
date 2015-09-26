@@ -1,3 +1,10 @@
 #map {
 	height: 80%;
 }
+#disclaimer {
+	width:95%;
+	width: calc(100% - 10em);
+	margin:3em;
+	padding:1em;
+	background-color:#FFFFE0;
+}

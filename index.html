@@ -10,6 +10,7 @@
 <body>
 <div id="map" class="smallmap"></div>
 <h2>OpenSignal Wardrive HOWTO</h2>
+<div id="disclaimer">Disclaimer: I am an OpenSignal fan, not an employee.  Anything on this site expresses my personal opinion through the medium of OpenTequila.</div>
 <ul>
 	<li>Install the <a href="http://opensignal.com/">OpenSignal</a> app for Droid.  (The iThingy is too locked down.  Someone needs to tell the folks at Cupertino to chill out a bit.  Giving folks access to their own data isn't actually going to hurt their business model.)</li>
 	<li>Install a camera app that stores location, bearing and azimuth.  I use <a href="https://play.google.com/store/apps/details?id=net.sourceforge.opencamera&hl=en">OpenCamera</a> for Droid.</li>
@@ -23,5 +24,20 @@
 	<li>TODO: When I load more than a few thousand points into the map it gets rather sluggish.  I will probably have to implement some sort of clustering algorithm to reduce the number of markers rendered at any particular level of zoom.  There is a method affectionately known as the Atomic Bomb algorithm by people in the industry.  I'll try that.</li>
 	<li>TODO: Colour different CIDs differently and add hover text.  At the moment if you click, the ID of the mobile masts near your mouse are printed to the developer console but that's all.  Fancier stuff will have to wait for next weekend.</li>
 </ul>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'bitdivine';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
 </body>
 </html>
