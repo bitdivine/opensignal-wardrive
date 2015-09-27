@@ -102,6 +102,14 @@ console.log("getting", a);
 function loadFiles(){
 	var files = [].slice.apply(document.getElementById("csv_files").files);
 	console.log(files); // list of File objects
+	if (typeof(ga)!=="undefined") {
+		// Yup, I care whether anyone is using this :-)
+		function mag(){console.log('ga',[].slice.call(arguments));ga.apply(ga,arguments);};
+		mag('send', 'event', 'wardrive', 'upload', 'stuff',files.length);
+		mag('send', 'event', 'wardrive', 'files',  'stuff',1);
+	} else {
+		console.log('ga','g');
+	}
 	return Promise.all(files.filter(function(file){return /[.]csv$/.test(file.name);}).map(function(f){
 		return loadFile(f).then(parseFile);
 	}));
